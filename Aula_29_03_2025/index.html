@@ -3,35 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar e Marcar itens</title>
+    <title>Tabela Dinâmica Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input, select {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #markButton {
+            background-color: #FFC107;
+        }
+        #unmarkButton {
+            background-color: #2196F3;
+        }
+        #removeButton {
+            background-color: #f44336;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr.marked {
+            background-color: #FFF9C4;
+        }
+        .message {
+            color: #f44336;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <h1>Tabela Dinâmica Interativa</h1>
 
-    <h1>Adicionar itens a tabela</h1>
-    <input type="text" name="Item" id="nome_item" placeholder="Digite um item">
-    <input type = "button" value="Adicionar" id="add_button">
+    <div class="container">
+        <h2>Adicionar Itens</h2>
+        <input type="text" id="itemInput" placeholder="Digite um item">
+        <button id="addButton">Adicionar</button>
+    </div>
 
-    <hr>
-
-    <h1>Tabela de itens</h1>
-        <div id="tabela_item"></div>
-
-    <hr>
-
-
-    <h1>Marcar ou Desmarcar o item</h1>
-    
-    <hr>
-    <form id="formulario_itens">
-        <label>Escolha o item: </label>
-        <select name="itens" id="menuitens">
-            <option value=""></option>
-
+    <div class="container">
+        <h2>Gerenciar Itens</h2>
+        <select id="itemSelect">
+            <option value="">Selecione um item</option>
         </select>
+        <button id="markButton">Marcar</button>
+        <button id="unmarkButton">Desmarcar</button>
+        <button id="removeButton">Remover</button>
+        <div id="message" class="message"></div>
+    </div>
 
-        <input type = "button" value="Marcar" id="">
-        <input type = "button" value="Desmarcar" id="">
-        <input type = "button" value="Remover Item" id="">
+    <div class="container">
+        <h2>Tabela de Itens</h2>
+        <table id="itemsTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Itens serão adicionados aqui dinamicamente -->
+            </tbody>
+        </table>
+    </div>
+
 
 
 
